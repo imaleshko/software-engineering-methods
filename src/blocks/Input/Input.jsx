@@ -5,7 +5,7 @@ const Input = ({ data, handleChange }) => {
     e.target.select();
   };
   return (
-    <div>
+    <div className={styles.wrapper}>
       <h1 className={styles.title}>Введіть дані</h1>
       <div className={styles.inputGroup}>
         <label htmlFor="x0" className={styles.label}>

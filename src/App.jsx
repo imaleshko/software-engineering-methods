@@ -1,4 +1,4 @@
-import Page from "./page/Page.jsx";
+import Page from "./page/Page/Page.jsx";
 
 const App = () => {
   return (
