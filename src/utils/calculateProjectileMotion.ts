@@ -1,14 +1,4 @@
-interface ProjectileMotionParams {
-  x0: number;
-  y0: number;
-  z0: number;
-  v0: number;
-  theta: number;
-  phi: number;
-  totalTime: number;
-  m: number;
-  k: number;
-}
+import type { MotionParameters } from "@/page/Page/Page.tsx";
 
 interface ProjectileMotionResult {
   xValue: number[];
@@ -26,7 +16,7 @@ const calculateProjectileMotion = ({
   totalTime,
   m,
   k,
-}: ProjectileMotionParams): ProjectileMotionResult => {
+}: MotionParameters): ProjectileMotionResult => {
   const toRadians = (angle: number): number => (angle * Math.PI) / 180;
   const thetaRad = toRadians(theta);
   const phiRad = toRadians(phi);

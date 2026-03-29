@@ -17,6 +17,36 @@
   margin: 0 auto;
 }
 
+.switch {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  gap: 10px;
+  margin: 0 auto 10px auto;
+}
+
+.button,
+.activeButton {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.activeButton {
+  background-color: #000;
+  color: #fff;
+}
+
+.button {
+  background-color: transparent;
+}
+
+.button:hover {
+  background-color: #f5f5f5;
+}
+
 .inputGroup {
   display: flex;
   flex-direction: column;
@@ -38,7 +68,20 @@
   outline: none;
 }
 
-.angle {
-  background: #e0e0e0;
-  cursor: pointer;
+.inputGroup input[type="range"] {
+  -webkit-appearance: none;
+}
+
+.inputGroup input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #ccc;
+}
+
+.inputGroup input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: #000;
+  border-radius: 50%;
+  margin-top: -6px;
 }
