@@ -156,7 +156,7 @@ const Input = ({
         <>
           <div className={styles.inputGroup}>
             <label htmlFor="m" className={styles.label}>
-              Маса тіла m [0.1, 1]
+              Маса тіла m [0.1, 10]
             </label>
             <input
               type="range"
