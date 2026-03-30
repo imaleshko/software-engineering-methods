@@ -59,7 +59,7 @@ const calculateConstantAccelerationMotion = ({
   const ay = a * cosTheta * sinPhi;
   const az = a * sinTheta;
 
-  for (let currentTime = 0; currentTime <= totalTime; currentTime += 0.01) {
+  for (let currentTime = 0; currentTime <= totalTime; currentTime += 0.1) {
     const x = coordinate(x0, v0x, ax, currentTime);
     const y = coordinate(y0, v0y, ay, currentTime);
     const z = coordinate(z0, v0z, az, currentTime);
@@ -92,18 +92,18 @@ const calculateProjectileMotion = ({
   const kDividedByM = k / m;
   const zConstant = mDividedByK * (v0z + mDividedByK * g);
 
-  for (let currentTime = 0; currentTime <= totalTime; currentTime += 0.001) {
+  for (let currentTime = 0; currentTime <= totalTime; currentTime += 0.01) {
     const oneMinusExp = 1 - Math.exp(-kDividedByM * currentTime);
 
     const x = x0 + mDividedByK * v0x * oneMinusExp;
     const y = y0 + mDividedByK * v0y * oneMinusExp;
-    let z = z0 + zConstant * oneMinusExp - mDividedByK * g * currentTime;
+    const z = z0 + zConstant * oneMinusExp - mDividedByK * g * currentTime;
 
     if (z < 0) {
-      z = 0;
-      xValues.push(x);
-      yValues.push(y);
-      zValues.push(z);
+      // z = 0;
+      // xValues.push(x);
+      // yValues.push(y);
+      // zValues.push(z);
       break;
     }
 

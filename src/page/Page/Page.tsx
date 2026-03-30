@@ -59,7 +59,7 @@ const Page = () => {
         onMotionChange={setMotionType}
         handleChange={handleChange}
       />
-      <Visualization trajectoryData={trajectoryData} />
+      <Visualization trajectoryData={trajectoryData} motionType={motionType} />
     </div>
   );
 };

@@ -2,11 +2,14 @@ import PlotlyModule from "react-plotly.js";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Plot = (PlotlyModule as any).default;
 
-import type { TrajectoryData } from "@/page/Page/Page.tsx";
-interface VisualizationData {
+import type { MotionType, TrajectoryData } from "@/page/Page/Page.tsx";
+
+interface VisualizationProps {
   trajectoryData: TrajectoryData;
+  motionType: MotionType;
 }
-const Visualization = ({ trajectoryData }: VisualizationData) => {
+
+const Visualization = ({ trajectoryData, motionType }: VisualizationProps) => {
   const maxVal = Math.max(
     ...trajectoryData.xValues,
     ...trajectoryData.yValues,
@@ -18,6 +21,11 @@ const Visualization = ({ trajectoryData }: VisualizationData) => {
     ...trajectoryData.yValues,
     ...trajectoryData.zValues,
   );
+
+  const titleText =
+    motionType === "acceleration"
+      ? "Прямолінійний рівноприскорений рух"
+      : "Рух тіла, кинутого під кутом до горизонту";
 
   return (
     <Plot
@@ -39,7 +47,7 @@ const Visualization = ({ trajectoryData }: VisualizationData) => {
           yaxis: { range: [minVal, maxVal] },
           zaxis: { range: [minVal, maxVal] },
         },
-        title: { text: "Графік прямолінійного рівноприскореного руху" },
+        title: { text: titleText },
       }}
     />
   );
