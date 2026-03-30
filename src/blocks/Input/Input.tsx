@@ -116,7 +116,7 @@ const Input = ({
           min="0"
           max="90"
           onChange={handleChange}
-          className={styles.theta}
+          className={styles.input}
         />
       </div>
 
@@ -133,7 +133,7 @@ const Input = ({
           min="0"
           max="90"
           onChange={handleChange}
-          className={styles.phi}
+          className={styles.input}
         />
       </div>
 
